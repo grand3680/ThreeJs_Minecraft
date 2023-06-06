@@ -11,7 +11,8 @@ And this so no Optimazed
 
 ![MineCrafttt](https://github.com/grand3680/ThreeJs_Minecraft/assets/84720129/2693cdea-6c34-4090-a7df-399abf2c0ac7)
 
-\```console
+run in your Terminal on project folder
+```console
 Node app.js
-\```
+```
 local link - http://127.0.0.1:3000/app.js
