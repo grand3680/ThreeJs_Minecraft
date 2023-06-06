@@ -1,0 +1,19 @@
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.Arrow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 25px;
+    height: 5px;
+    background-color: rgb(164, 154, 154);
+    z-index: 1001;
+}
+
+.leftArrow {
+    transform: rotate(90deg);
+}

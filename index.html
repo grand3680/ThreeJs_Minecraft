@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/title.jpg">
+    <title>Cube</title>
+    <link rel="stylesheet" href="/static/css/body.css">
+    <link rel="stylesheet" href="/static/css/menu.css">
+    <link rel="stylesheet" href="/static/css/hotBar.css">
+    <link rel="stylesheet" href="/static/css/inventory.css">
+    <style>
+        @font-face {
+            font-family: "minecraftFont";
+            src: url(static/fons/minecraft_font.ttf);
+            font-weight: bold;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="minecraftGame">
+        <div class="Arrow"></div>
+        <div class="Arrow leftArrow"></div>
+        <canvas id="THREE_JS"></canvas>        
+    </div>
+    <div id="blocked" style="display: none;">
+        <div id="MainMenu" class="MainMenu">
+            <h2>Options</h2>
+            <h3>walk - wasd</h3>
+            <h3>Place block right click</h3>
+            <h3>Remove block left click</h3>
+            <button id="continue">continue</button>
+        </div>        
+    </div>
+
+    <div class="PlayerInventory">
+        <div class="blackBackround" style="display: none;"></div>
+        <div class="inventory" style="display: none;"></div>        
+        <div class="hotBar"></div>
+    </div>
+
+
+
+    <script src="/static/js/lib/three.js"></script> 
+  
+    <!-- <script src="/static/js/lib/GLTFLoader.js"></script> -->
+    <!-- <script src="/static/js/lib/PointerLockControls.js"></script> -->
+    <!-- <script src="/static/js/lib/FirstPersonControls.js"></script> -->
+    <!-- <script src="https://raw.githubusercontent.com/mrdoob/three.js/master/examples/jsm/controls/PointerLockControls.js"></script> -->
+    
+    <script src="/static/js/config.js"></script>
+    <script src="/static/js/scene.js"></script>   
+
+    <script src="/static/js/player.js"></script>
+    <script src="/static/js/cube/texture.js"></script>
+    <script src="/static/js/cube/addCube.js"></script>
+
+    <!-- camera -->
+    <script src="/static/js/camera/inventCamera.js"></script>  
+    <script src="/static/js/camera/cameraPos.js"></script>    
+    <script src="/static/js/camera/LockCamera.js"></script>    
+
+    <script src="/static/js/objectLouder.js"></script>
+    <script src="/static/js/ground.js"></script>    
+    <script src="/static/js/cube/cubeRaycaster.js"></script>
+    <script src="/static/js/cube/placeCube.js"></script>
+
+    <script src="/static/js/makeInventory.js"></script>    
+    <script src="/static/js/Inventory.js"></script>
+    <script src="/static/js/contexMenu.js"></script>
+
+    <script src="/static/js/clouds.js"></script>         
+    <script src="/static/js/animate.js"></script>
+
+
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "/static/js/lib/three/build/three.module.js",
+                "FirstPerson": "/static/js/lib/three/addons/FirstPersonControls.js",
+                "PointerLock": "/static/js/lib/three/addons/PointerLockControls.js",
+                "cubeLoader" : "/static/js/lib/three/src/loaders/CubeTextureLoader.js",
+                "GLTFLoader" : "/static/js/lib/three/src/loaders/GLTFLoader.js"
+            }
+        }
+    </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+        import { FirstPersonControls } from 'FirstPerson';
+        // import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+        import { ImprovedNoise } from "https://cdn.skypack.dev/three@0.133.1/examples/jsm/math/ImprovedNoise.js";
+        
+        Noised = new ImprovedNoise();
+
+        // import { PointerLockControls } from 'PointerLock';     
+        controls = new FirstPersonControls( camera, renderer.domElement );
+
+
+        // controls.lookSpeed = 0.000001;
+    </script>  
+</body>
+</html>
