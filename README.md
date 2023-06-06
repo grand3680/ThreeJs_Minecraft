@@ -3,7 +3,7 @@
 Minecraft on THREE.JS on Node,js server
 <h2>
 !!WARING!!
-This mi first (After test Cube) Project in THREE.JS
+This mн first (After test Cube) Project in THREE.JS
 And this so no Optimazed
 </h2>
 
